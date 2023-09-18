@@ -18,26 +18,26 @@ import {
 } from "@heroicons/react/24/solid";
 const SideBar = () => {
   return (
-    <Card className="h-[calc(100vh-2rem)] w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
+    <Card className="h-full w-full max-w-[20rem] p-4 shadow-xl rounded-none bg-green shadow-blue-gray-900/5">
       <div className="mb-2 p-4">
-        <Typography variant="h5" color="blue-gray">
-          Sidebar
+        <Typography variant="h5" color="white">
+          User
         </Typography>
       </div>
       <List>
-        <ListItem>
+        <ListItem className="text-white">
           <ListItemPrefix>
-            <PresentationChartBarIcon className="h-5 w-5" />
+            <PresentationChartBarIcon className="h-5 w-5 text-white" />
           </ListItemPrefix>
           Dashboard
         </ListItem>
-        <ListItem>
+        <ListItem className="text-white">
           <ListItemPrefix>
             <ShoppingBagIcon className="h-5 w-5" />
           </ListItemPrefix>
           E-Commerce
         </ListItem>
-        <ListItem>
+        <ListItem className="text-white">
           <ListItemPrefix>
             <InboxIcon className="h-5 w-5" />
           </ListItemPrefix>
@@ -52,19 +52,19 @@ const SideBar = () => {
             />
           </ListItemSuffix>
         </ListItem>
-        <ListItem>
+        <ListItem className="text-white">
           <ListItemPrefix>
             <UserCircleIcon className="h-5 w-5" />
           </ListItemPrefix>
           Profile
         </ListItem>
-        <ListItem>
+        <ListItem className="text-white">
           <ListItemPrefix>
             <Cog6ToothIcon className="h-5 w-5" />
           </ListItemPrefix>
           Settings
         </ListItem>
-        <ListItem>
+        <ListItem className="text-white">
           <ListItemPrefix>
             <PowerIcon className="h-5 w-5" />
           </ListItemPrefix>
