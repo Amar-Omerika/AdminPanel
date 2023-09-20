@@ -1,5 +1,5 @@
 import React from "react";
-import { AreaChart } from "../../components";
+import { AreaChart, MultiLineChart } from "../../components";
 import { faker } from "@faker-js/faker";
 
 const labels = ["January", "February", "March", "April", "May", "June", "July"];
@@ -115,10 +115,13 @@ const OPTIONS_PLACEHOLDER = [
 const Dashboard = () => {
   return (
     <div className="w-4/5">
-      <div className="h-2/5 grid grid-cols-3 gap-3">
+      <div className="h-1/5 grid grid-cols-3 gap-3">
         {OPTIONS_PLACEHOLDER.map((option, index) => {
           return <AreaChart options={option} data={option.data} key={index} />;
         })}
+      </div>
+      <div className="h-2/5 flex">
+        <MultiLineChart />
       </div>
     </div>
   );

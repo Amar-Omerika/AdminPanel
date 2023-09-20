@@ -26,10 +26,8 @@ ChartJS.register(
 interface Props {
   options?: any;
   data?: any;
-  label?: string;
-  text?: string;
 }
-function AreaChart({ options, data, label, text }: Props) {
+function AreaChart({ options, data }: Props) {
   return (
     <div className="bg-white m-3 rounded-sm">
       <Line options={options} data={data} />
