@@ -1,5 +1,10 @@
 import React from "react";
-import { AreaChart, MultiLineChart, VerticalBarChart } from "../../components";
+import {
+  AreaChart,
+  MultiLineChart,
+  VerticalBarChart,
+  DoughnutChart,
+} from "../../components";
 import { faker } from "@faker-js/faker";
 
 const labels = ["January", "February", "March", "April", "May", "June", "July"];
@@ -226,12 +231,15 @@ const Dashboard = () => {
           );
         })}
       </div>
-      <div className="h-2/5 flex">
+      <div className="h-2/5 grid grid-cols-2 gap-2">
         {BARCHART_PLACEHOLDER_DATA.map((option, index) => {
           return (
             <VerticalBarChart options={option} data={option.data} key={index} />
           );
         })}
+        <div className="h-full flex">
+          <DoughnutChart />
+        </div>
       </div>
     </div>
   );

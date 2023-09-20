@@ -26,7 +26,7 @@ interface Props {
 }
 function VerticalBarChart({ options, data }: Props) {
   return (
-    <div className="bg-white w-3/6 m-3 rounded-sm">
+    <div className="bg-white m-3 rounded-sm">
       <Bar options={options} data={data} />
     </div>
   );
