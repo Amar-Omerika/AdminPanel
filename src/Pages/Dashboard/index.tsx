@@ -1,5 +1,5 @@
 import React from "react";
-import { AreaChart, MultiLineChart } from "../../components";
+import { AreaChart, MultiLineChart, VerticalBarChart } from "../../components";
 import { faker } from "@faker-js/faker";
 
 const labels = ["January", "February", "March", "April", "May", "June", "July"];
@@ -168,6 +168,49 @@ const MULTIAXISLINE_PLACEHOLDER_DATA = [
   },
 ];
 
+const BARCHART_PLACEHOLDER_DATA = [
+  {
+    data: {
+      labels,
+      datasets: [
+        {
+          label: "Servings",
+          data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+          backgroundColor: "rgba(206, 92, 96, 1)",
+        },
+        {
+          label: "Staff",
+          data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+          backgroundColor: "rgba(98, 69, 144, 1)",
+        },
+        {
+          label: "Customers",
+          data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+          backgroundColor: "rgba(227, 167, 60, 1)",
+        },
+      ],
+    },
+    responsive: true,
+    scales: {
+      x: {
+        display: false, // Hide the x-axis grid lines
+      },
+      y: {
+        display: false, // Hide the y-axis grid lines
+      },
+    },
+    plugins: {
+      legend: {
+        position: "top" as const,
+      },
+      title: {
+        display: false,
+        text: "Chart.js Bar Chart",
+      },
+    },
+  },
+];
+
 const Dashboard = () => {
   return (
     <div className="w-4/5">
@@ -180,6 +223,13 @@ const Dashboard = () => {
         {MULTIAXISLINE_PLACEHOLDER_DATA.map((option, index) => {
           return (
             <MultiLineChart options={option} data={option.data} key={index} />
+          );
+        })}
+      </div>
+      <div className="h-2/5 flex">
+        {BARCHART_PLACEHOLDER_DATA.map((option, index) => {
+          return (
+            <VerticalBarChart options={option} data={option.data} key={index} />
           );
         })}
       </div>

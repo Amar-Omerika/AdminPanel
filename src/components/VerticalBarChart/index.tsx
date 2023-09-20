@@ -3,19 +3,18 @@ import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
-  PointElement,
-  LineElement,
+  BarElement,
   Title,
   Tooltip,
   Legend,
 } from "chart.js";
-import { Line } from "react-chartjs-2";
+import { Bar } from "react-chartjs-2";
+import { faker } from "@faker-js/faker";
 
 ChartJS.register(
   CategoryScale,
   LinearScale,
-  PointElement,
-  LineElement,
+  BarElement,
   Title,
   Tooltip,
   Legend
@@ -25,12 +24,11 @@ interface Props {
   options?: any;
   data?: any;
 }
-function MultiLineChart({ options, data }: Props) {
+function VerticalBarChart({ options, data }: Props) {
   return (
-    <div className="bg-white w-full m-3 rounded-sm">
-      <Line options={options} data={data} />
+    <div className="bg-white w-3/6 m-3 rounded-sm">
+      <Bar options={options} data={data} />
     </div>
   );
 }
-
-export default MultiLineChart;
+export default VerticalBarChart;
