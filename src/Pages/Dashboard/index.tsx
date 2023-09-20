@@ -111,6 +111,62 @@ const OPTIONS_PLACEHOLDER = [
     },
   },
 ];
+const MULTIAXISLINE_PLACEHOLDER_DATA = [
+  {
+    data: {
+      labels,
+      datasets: [
+        {
+          label: "Number of orders",
+          data: labels.map(() =>
+            faker.datatype.number({ min: -1000, max: 1000 })
+          ),
+          borderColor: "rgb(255, 99, 132)",
+          backgroundColor: "rgba(206, 92, 96, 1)",
+          yAxisID: "y",
+        },
+        {
+          label: "Number of customers",
+          data: labels.map(() =>
+            faker.datatype.number({ min: -1000, max: 1000 })
+          ),
+          borderColor: "rgb(35, 162, 206)",
+          backgroundColor: "rgba(35, 162, 206, 1)",
+          yAxisID: "y1",
+        },
+      ],
+    },
+    responsive: true,
+    maintainAspectRatio: false,
+    width: "100%",
+    interaction: {
+      mode: "index" as const,
+      intersect: false,
+    },
+    stacked: false,
+    plugins: {
+      title: {
+        display: true,
+        text: "Statistic",
+      },
+    },
+    scales: {
+      y: {
+        type: "linear" as const,
+        display: true,
+        position: "left" as const,
+      },
+      y1: {
+        type: "linear" as const,
+        display: true,
+        position: "right" as const,
+        grid: {
+          drawOnChartArea: false,
+        },
+      },
+    },
+  },
+];
 
 const Dashboard = () => {
   return (
@@ -121,7 +177,11 @@ const Dashboard = () => {
         })}
       </div>
       <div className="h-2/5 flex">
-        <MultiLineChart />
+        {MULTIAXISLINE_PLACEHOLDER_DATA.map((option, index) => {
+          return (
+            <MultiLineChart options={option} data={option.data} key={index} />
+          );
+        })}
       </div>
     </div>
   );
