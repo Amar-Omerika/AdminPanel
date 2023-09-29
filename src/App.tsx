@@ -1,14 +1,10 @@
-import React from "react";
-import MainLayout from "./layout/MainLayout";
-import { SideBar } from "./components";
-import Dashboard from "./Pages/Dashboard";
-
+import GlobalRoutes from "./router/globalRoutes";
+import { BrowserRouter } from "react-router-dom";
 function App() {
   return (
-    <MainLayout>
-      <SideBar />
-      <Dashboard />
-    </MainLayout>
+    <BrowserRouter>
+      <GlobalRoutes />
+    </BrowserRouter>
   );
 }
 

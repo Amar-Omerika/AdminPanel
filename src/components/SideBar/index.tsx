@@ -10,12 +10,13 @@ import {
 } from "@material-tailwind/react";
 import {
   PresentationChartBarIcon,
-  ShoppingBagIcon,
   UserCircleIcon,
   Cog6ToothIcon,
   InboxIcon,
   PowerIcon,
+  UserIcon,
 } from "@heroicons/react/24/solid";
+import { Link } from "react-router-dom";
 const SideBar = () => {
   return (
     <Card className="h-full w-full max-w-[20rem] p-4 shadow-xl rounded-none bg-green shadow-blue-gray-900/5">
@@ -25,18 +26,22 @@ const SideBar = () => {
         </Typography>
       </div>
       <List>
-        <ListItem className="text-white">
-          <ListItemPrefix>
-            <PresentationChartBarIcon className="h-5 w-5 text-white" />
-          </ListItemPrefix>
-          Dashboard
-        </ListItem>
-        <ListItem className="text-white">
-          <ListItemPrefix>
-            <ShoppingBagIcon className="h-5 w-5" />
-          </ListItemPrefix>
-          E-Commerce
-        </ListItem>
+        <Link to={"/"}>
+          <ListItem className="text-white">
+            <ListItemPrefix>
+              <PresentationChartBarIcon className="h-5 w-5 text-white" />
+            </ListItemPrefix>
+            Dashboard
+          </ListItem>
+        </Link>
+        <Link to={"/customers"}>
+          <ListItem className="text-white">
+            <ListItemPrefix>
+              <UserIcon className="h-5 w-5" />
+            </ListItemPrefix>
+            Customers
+          </ListItem>
+        </Link>
         <ListItem className="text-white">
           <ListItemPrefix>
             <InboxIcon className="h-5 w-5" />

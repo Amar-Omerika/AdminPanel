@@ -1,11 +1,12 @@
-import React from "react";
 import {
   AreaChart,
   MultiLineChart,
   VerticalBarChart,
   DoughnutChart,
+  SideBar,
 } from "../../components";
 import { faker } from "@faker-js/faker";
+import MainLayout from "../../layout/MainLayout";
 
 const labels = ["January", "February", "March", "April", "May", "June", "July"];
 
@@ -218,30 +219,39 @@ const BARCHART_PLACEHOLDER_DATA = [
 
 const Dashboard = () => {
   return (
-    <div className="w-4/5">
-      <div className="h-1/5 grid grid-cols-3 gap-3">
-        {OPTIONS_PLACEHOLDER.map((option, index) => {
-          return <AreaChart options={option} data={option.data} key={index} />;
-        })}
-      </div>
-      <div className="h-2/5 flex">
-        {MULTIAXISLINE_PLACEHOLDER_DATA.map((option, index) => {
-          return (
-            <MultiLineChart options={option} data={option.data} key={index} />
-          );
-        })}
-      </div>
-      <div className="h-2/5 grid grid-cols-2 gap-2">
-        {BARCHART_PLACEHOLDER_DATA.map((option, index) => {
-          return (
-            <VerticalBarChart options={option} data={option.data} key={index} />
-          );
-        })}
-        <div className="h-full flex">
-          <DoughnutChart />
+    <MainLayout>
+      <SideBar />
+      <div className="w-4/5">
+        <div className="h-1/5 grid grid-cols-3 gap-3">
+          {OPTIONS_PLACEHOLDER.map((option, index) => {
+            return (
+              <AreaChart options={option} data={option.data} key={index} />
+            );
+          })}
+        </div>
+        <div className="h-2/5 flex">
+          {MULTIAXISLINE_PLACEHOLDER_DATA.map((option, index) => {
+            return (
+              <MultiLineChart options={option} data={option.data} key={index} />
+            );
+          })}
+        </div>
+        <div className="h-2/5 grid grid-cols-2 gap-2">
+          {BARCHART_PLACEHOLDER_DATA.map((option, index) => {
+            return (
+              <VerticalBarChart
+                options={option}
+                data={option.data}
+                key={index}
+              />
+            );
+          })}
+          <div className="h-full flex">
+            <DoughnutChart />
+          </div>
         </div>
       </div>
-    </div>
+    </MainLayout>
   );
 };
 
