@@ -34,7 +34,10 @@ const rows = [
   { id: 9, lastName: "Roxie", firstName: "Harvey", age: 65 },
 ];
 
-export default function Table() {
+interface Props {
+  content: string;
+}
+export default function Table({ content }: Props) {
   return (
     <div style={{ height: 400, width: "100%" }}>
       <DataGrid

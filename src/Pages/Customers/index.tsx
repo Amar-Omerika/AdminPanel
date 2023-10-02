@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { SideBar, Table } from "../../components";
 import MainLayout from "../../layout/MainLayout";
 import {
@@ -8,6 +8,10 @@ import {
 } from "@heroicons/react/24/solid";
 
 const Customers = () => {
+  const [active, setActive] = useState("clients");
+  const handleActiveButton = (title: string) => {
+    setActive(title);
+  };
   return (
     <MainLayout>
       <SideBar />
@@ -32,7 +36,39 @@ const Customers = () => {
         <div className="w-full bg-white mt-16">
           <div className="p-5">
             <h1 className="mb-2">Client activity</h1>
-            <Table />
+            <div className="bg-lightGrey p-2 mb-2 w-[25%] rounded-md">
+              {active === "clients" ? (
+                <button
+                  onClick={() => handleActiveButton("clients")}
+                  className="bg-white p-2 rounded-md"
+                >
+                  Recent clients
+                </button>
+              ) : (
+                <button
+                  onClick={() => handleActiveButton("clients")}
+                  className="p-2 rounded-md"
+                >
+                  Recent clients
+                </button>
+              )}
+              {active === "orders" ? (
+                <button
+                  onClick={() => handleActiveButton("orders")}
+                  className="bg-white p-2 ml-1 rounded-md"
+                >
+                  Order activity
+                </button>
+              ) : (
+                <button
+                  onClick={() => handleActiveButton("orders")}
+                  className="p-2 ml-1 rounded-md"
+                >
+                  Order activity
+                </button>
+              )}
+            </div>
+            <Table content={active} />
           </div>
         </div>
       </div>
