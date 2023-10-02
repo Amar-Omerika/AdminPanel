@@ -33,24 +33,58 @@ const rows = [
   { id: 8, lastName: "Frances", firstName: "Rossini", age: 36 },
   { id: 9, lastName: "Roxie", firstName: "Harvey", age: 65 },
 ];
+const columns1: GridColDef[] = [
+  { field: "id", headerName: "OrderID", width: 70 },
+  { field: "orderName", headerName: "Order name", width: 130 },
+  { field: "amount", headerName: "Amount", width: 130 },
+  {
+    field: "date",
+    headerName: "Date",
+    type: "string",
+    width: 120,
+  },
+];
 
+const rows1 = [
+  { id: 1, orderName: "2x Burger", amount: "20$", date: "22.02.2023" },
+  { id: 2, orderName: "4x Burger", amount: "30$", date: "22.02.2023" },
+  { id: 3, orderName: "2x Salads", amount: "20$", date: "22.02.2023" },
+  { id: 4, orderName: "2x Ice Tea", amount: "5$", date: "22.02.2023" },
+  { id: 5, orderName: "1x Pizza", amount: "20$", date: "22.02.2023" },
+  { id: 6, orderName: "3x Burger", amount: "20$", date: "22.02.2023" },
+  { id: 7, orderName: "1x Burger", amount: "10$", date: "22.02.2023" },
+];
 interface Props {
   content: string;
 }
 export default function Table({ content }: Props) {
   return (
     <div style={{ height: 400, width: "100%" }}>
-      <DataGrid
-        rows={rows}
-        columns={columns}
-        initialState={{
-          pagination: {
-            paginationModel: { page: 0, pageSize: 5 },
-          },
-        }}
-        pageSizeOptions={[5, 10]}
-        checkboxSelection
-      />
+      {content === "clients" ? (
+        <DataGrid
+          rows={rows}
+          columns={columns}
+          initialState={{
+            pagination: {
+              paginationModel: { page: 0, pageSize: 5 },
+            },
+          }}
+          pageSizeOptions={[5, 10]}
+          checkboxSelection
+        />
+      ) : (
+        <DataGrid
+          rows={rows1}
+          columns={columns1}
+          initialState={{
+            pagination: {
+              paginationModel: { page: 0, pageSize: 5 },
+            },
+          }}
+          pageSizeOptions={[5, 10]}
+          checkboxSelection
+        />
+      )}
     </div>
   );
 }

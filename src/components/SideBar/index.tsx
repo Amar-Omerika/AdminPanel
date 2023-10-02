@@ -42,7 +42,7 @@ const SideBar = () => {
             Customers
           </ListItem>
         </Link>
-        <ListItem className="text-white">
+        {/* <ListItem className="text-white">
           <ListItemPrefix>
             <InboxIcon className="h-5 w-5" />
           </ListItemPrefix>
@@ -74,7 +74,7 @@ const SideBar = () => {
             <PowerIcon className="h-5 w-5" />
           </ListItemPrefix>
           Log Out
-        </ListItem>
+        </ListItem> */}
       </List>
     </Card>
   );
