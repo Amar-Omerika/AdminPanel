@@ -46,13 +46,13 @@ const columns1: GridColDef[] = [
 ];
 
 const rows1 = [
-  { id: 1, orderName: "2x Burger", amount: "20$", date: "22.02.2023" },
-  { id: 2, orderName: "4x Burger", amount: "30$", date: "22.02.2023" },
-  { id: 3, orderName: "2x Salads", amount: "20$", date: "22.02.2023" },
-  { id: 4, orderName: "2x Ice Tea", amount: "5$", date: "22.02.2023" },
-  { id: 5, orderName: "1x Pizza", amount: "20$", date: "22.02.2023" },
-  { id: 6, orderName: "3x Burger", amount: "20$", date: "22.02.2023" },
-  { id: 7, orderName: "1x Burger", amount: "10$", date: "22.02.2023" },
+  { id: 1, orderName: "1x Phone case", amount: "20$", date: "22.02.2023" },
+  { id: 2, orderName: "4x Phone case", amount: "30$", date: "22.02.2023" },
+  { id: 3, orderName: "2x Phone case", amount: "20$", date: "22.02.2023" },
+  { id: 4, orderName: "2x Phone case", amount: "5$", date: "22.02.2023" },
+  { id: 5, orderName: "1x Phone case", amount: "20$", date: "22.02.2023" },
+  { id: 6, orderName: "3x Phone case", amount: "20$", date: "22.02.2023" },
+  { id: 7, orderName: "1x Phone case", amount: "10$", date: "22.02.2023" },
 ];
 interface Props {
   content: string;

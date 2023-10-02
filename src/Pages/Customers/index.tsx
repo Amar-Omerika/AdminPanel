@@ -29,7 +29,7 @@ const Customers = () => {
           </div>
           <div className="bg-white ml-5 rounded-md mr-5">
             <BanknotesIcon className="h-12 w-12 m-3 text-gray-500" />
-            <h1 className="ml-3 text-lg">Total shipments</h1>
+            <h1 className="ml-3 text-lg">Revenue</h1>
             <h1 className="ml-3 text-2xl font-bold">$ 50.000</h1>
           </div>
         </div>
