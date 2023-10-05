@@ -7,6 +7,8 @@ import {
 } from "../../components";
 import { faker } from "@faker-js/faker";
 import MainLayout from "../../layout/MainLayout";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 const labels = ["January", "February", "March", "April", "May", "June", "July"];
 
@@ -221,22 +223,22 @@ const Dashboard = () => {
   return (
     <MainLayout>
       <SideBar />
-      <div className="w-4/5">
-        <div className="h-1/5 grid grid-cols-3 gap-3">
+      <div className="lg:w-4/5 sm:w-full">
+        <div className="h-1/5 grid sm:grid-cols-1 gap-1 lg:gap-3 lg:grid-cols-3">
           {OPTIONS_PLACEHOLDER.map((option, index) => {
             return (
               <AreaChart options={option} data={option.data} key={index} />
             );
           })}
         </div>
-        <div className="h-2/5 flex">
+        <div className="lg:h-2/5 sm:h-[200] lg:flex">
           {MULTIAXISLINE_PLACEHOLDER_DATA.map((option, index) => {
             return (
               <MultiLineChart options={option} data={option.data} key={index} />
             );
           })}
         </div>
-        <div className="h-2/5 grid grid-cols-2 gap-2">
+        <div className="h-2/5 grid lg:grid-cols-2 lg:gap-2 sm:grid-cols-1 sm:gap-0">
           {BARCHART_PLACEHOLDER_DATA.map((option, index) => {
             return (
               <VerticalBarChart

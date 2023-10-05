@@ -26,7 +26,7 @@ interface Props {
 }
 function MultiLineChart({ options, data }: Props) {
   return (
-    <div className="bg-white w-full m-3 rounded-sm">
+    <div className="bg-white lg:w-full mt-[250px] lg:m-3 m-3 rounded-sm">
       <Line options={options} data={data} />
     </div>
   );
