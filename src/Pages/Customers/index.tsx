@@ -15,8 +15,8 @@ const Customers = () => {
   return (
     <MainLayout>
       <SideBar />
-      <div className="w-4/5">
-        <div className="grid grid-cols-3 gap-3 mt-8">
+      <div className="lg:w-4/5 sm:w-full">
+        <div className="grid lg:grid-cols-3 gap-3 sm:grid-cols-1 mt-8 mr-5 ">
           <div className="bg-white ml-5 rounded-md">
             <InboxStackIcon className="h-12 w-12 m-3 text-gray-500" />
             <h1 className="ml-3 text-lg">Total shipments</h1>
@@ -27,7 +27,7 @@ const Customers = () => {
             <h1 className="ml-3 text-lg">Pending orders</h1>
             <h1 className="ml-3 text-2xl font-bold">120</h1>
           </div>
-          <div className="bg-white ml-5 rounded-md mr-5">
+          <div className="bg-white ml-5 rounded-md lg:mr-5">
             <BanknotesIcon className="h-12 w-12 m-3 text-gray-500" />
             <h1 className="ml-3 text-lg">Revenue</h1>
             <h1 className="ml-3 text-2xl font-bold">$ 50.000</h1>
@@ -36,7 +36,7 @@ const Customers = () => {
         <div className="w-full bg-white mt-16">
           <div className="p-5">
             <h1 className="mb-2">Client activity</h1>
-            <div className="bg-lightGrey p-2 mb-2 w-[25%] rounded-md">
+            <div className="bg-lightGrey p-2 mb-2 lg:w-[25%] rounded-md">
               {active === "clients" ? (
                 <button
                   onClick={() => handleActiveButton("clients")}

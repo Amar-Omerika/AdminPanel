@@ -7,8 +7,6 @@ import {
 } from "../../components";
 import { faker } from "@faker-js/faker";
 import MainLayout from "../../layout/MainLayout";
-import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
 
 const labels = ["January", "February", "March", "April", "May", "June", "July"];
 
